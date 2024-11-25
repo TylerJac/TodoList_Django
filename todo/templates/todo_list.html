@@ -7,9 +7,18 @@
     <h1>Todo List</h1>
     <ul>
         {% for todo in todos %}
-            <li>{{ todo.title }} - {% if todo.completed %}Done{% else %}Pending{% endif %}</li>
+            <li>
+                {{ todo.title }} - 
+                {% if todo.completed %}
+                    Completed
+                {% else %}
+                    Pending
+                {% endif %}
+                <a href="{% url 'todo-edit' todo.id %}">Toggle Status</a> |
+            </li>
         {% endfor %}
     </ul>
     <a href="{% url 'todo-create' %}">Add New Todo</a>
+    <a href="{% url 'todo-history' %}">View History</a>
 </body>
 </html>

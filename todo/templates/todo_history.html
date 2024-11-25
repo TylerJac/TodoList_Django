@@ -1,0 +1,7 @@
+<h1>Todo History</h1>
+<ul>
+    {% for todo in archived_todos %}
+        <li>{{ todo.title }} - Completed</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'todo-list' %}">Back to Todo List</a>
